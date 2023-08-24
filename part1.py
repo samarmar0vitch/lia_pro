@@ -123,14 +123,14 @@ def go_go ():
 
 def go_sleep():
         print(" - sleep  ZZZZZ 📴 ")
-        time.sleep(120)
+        time.sleep(180)
         redirecter_bridge()
 
 
 def go_live(id_room):
         try:
-            print(" - **********LIVE********** - ")
-            print(" - **--GET URL OF LIVE  STREAM--**")
+            print(" - 🕯️ **********LIVE********** 🕯️ - ")
+            print(" -🏁 **--GET URL OF LIVE  STREAM--🏁 **")
             stream_url =get_live_url(id_room)
             ffmpeg_fire_up(stream_url)
             print(" - **--GET URL OF LIVE  STREAM--** [ "+stream_url+" ]")
