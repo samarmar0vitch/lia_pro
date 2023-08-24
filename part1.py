@@ -1,4 +1,4 @@
-
+#ffmpeg -probesize 100M -analyzeduration 20M -re -i "https://pull-f5-sg01.tiktokcdn.com/stage/stream-2131214758098501701_or4.flv" -strict -2 -c:v libx264 -pix_fmt yuv420p -c:a aac -map 0:0 -map 0:1 -ar 44100 -ab 128k -ac 2 -b:v 2567k -flags +global_header -bsf:a aac_adtstoasc -bufsize 1000k -f flv "rtmp://a.rtmp.youtube.com/live2/ms9z-mx5s-fvjg-9tmf-93ap"\n
 import time
 import requests as req
 import re
@@ -111,10 +111,10 @@ def go_go ():
                 content = req.get(url).text
                 #content = response.text
                 if '"status":4' in content:
-                        print(' - statu { Offline }')
+                        print(' - statu { Offline ⛔ }')
                         state="off"
                 elif '"status":4' not in content:
-                        print(' - statu { Online }')
+                        print(' - statu { Online 💡}')
                         state="on"
                 return state ,id_room
 
@@ -122,7 +122,7 @@ def go_go ():
                 print(op)
 
 def go_sleep():
-        print(" - sleep  ZZZZZ")
+        print(" - sleep  ZZZZZ 📴 ")
         time.sleep(120)
         redirecter_bridge()
 
