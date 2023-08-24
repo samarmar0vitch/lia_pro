@@ -1,4 +1,5 @@
 #ffmpeg -probesize 100M -analyzeduration 20M -re -i "https://pull-f5-sg01.tiktokcdn.com/stage/stream-2131214758098501701_or4.flv" -strict -2 -c:v libx264 -pix_fmt yuv420p -c:a aac -map 0:0 -map 0:1 -ar 44100 -ab 128k -ac 2 -b:v 2567k -flags +global_header -bsf:a aac_adtstoasc -bufsize 1000k -f flv "rtmp://a.rtmp.youtube.com/live2/ms9z-mx5s-fvjg-9tmf-93ap"\n
+import sys_notification
 import time
 import requests as req
 import re
@@ -116,6 +117,8 @@ def go_go ():
                 elif '"status":4' not in content:
                         print(' - statu { Online 💡}')
                         state="on"
+                        sys_notification.send_it()
+
                 return state ,id_room
 
         except Exception as op:
@@ -154,4 +157,3 @@ def redirecter_bridge():
                 go_sleep()
 
 redirecter_bridge()
-
