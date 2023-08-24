@@ -11,7 +11,7 @@ while :
 do
     ((count++))
 
-ffmpeg  -i $u \
+ffmpeg -probesize 100M -analyzeduration 20M -re -i $u \
 -c:v libx264 -b:a 384k -ac 2 -preset slow -crf 28 \
 -profile:v high -bf 2 -pix_fmt yuv420p \
 -threads 4 -xerror \
@@ -19,3 +19,4 @@ ffmpeg  -i $u \
 
     sleep 1
 done
+##ffmpeg -probesize 100M -analyzeduration 20M -re -i "https://pull-f5-sg01.tiktokcdn.com/stage/stream-2131214758098501701_or4.flv" -strict -2 -c:v libx264 -pix_fmt yuv420p -c:a aac -map 0:0 -map 0:1 -ar 44100 -ab 128k -ac 2 -b:v 2567k -flags +global_header -bsf:a aac_adtstoasc -bufsize 1000k -f flv "rtmp://a.rtmp.youtube.com/live2/ms9z-mx5s-fvjg-9tmf-93ap"\n
