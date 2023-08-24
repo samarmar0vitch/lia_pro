@@ -29,16 +29,12 @@ def ffmpeg_fire_up(stream_url):
                         if "st:1 invalid dropping" in line :
                                 print(line)
                                 process.terminate()
-                                input("errrrrrrrrrrrrr")
+                                #input("errrrrrrrrrrrrr")
+                                ffmpeg_fire_up(stream_url)
 
         except Exception as e:
                 raise e
         
-
-
-
-
-
 
 
 def get_live_url(room_id):
