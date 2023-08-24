@@ -3,4 +3,4 @@ import os
 os.system('clear')
 #user_n="darine_darin"
 user_s=["babajackson84","liaeljoni1","tumpolinaaa"]
-user_n=user_s[1]
+user_n=user_s[0]
