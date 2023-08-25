@@ -13,7 +13,7 @@ do
 
 ffmpeg -probesize 100M -analyzeduration 20M -re -i $u \
 -c:v libx264 -b:a 384k -ac 2 -preset slow -crf 28 \
--profile:v high -bf 2 -pix_fmt yuv420p \
+-profile:v high -bf 2 -pix_fmt yuvj420p \
 -threads 4 -xerror \
 -maxrate 5M -bufsize 10M -r 30 -g 15 -coder 1 -f flv $key_stream #2> ylog.txt
 
