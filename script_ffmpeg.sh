@@ -12,7 +12,7 @@ printout() {
 while :
 do
     ((count++))
-ffmpeg -hide_banner  -re -fflags +genpts -i "https://pull-flv-l11-sg01.tiktokcdn.com/stage/stream-2419463678237343787_or4.flv" -flags +global_header -c:v copy -tag:v hvc1 -codec:a copy -hls_init_time 6.000 -hls_time 6.000 -strftime 1 -master_pl_name master.m3u8 -http_persistent 1 -f hls -segment_wrap 1 -method POST "https://a.upload.youtube.com/http_upload_hls?cid="$you_tokens"&copy=0&file=master.m3u8"
+ffmpeg -hide_banner  -re -fflags +genpts -i $u -flags +global_header -c:v copy -tag:v hvc1 -codec:a copy -hls_init_time 6.000 -hls_time 6.000 -strftime 1 -master_pl_name master.m3u8 -http_persistent 1 -f hls -segment_wrap 1 -method POST "https://a.upload.youtube.com/http_upload_hls?cid="$you_tokens"&copy=0&file=master.m3u8"
 
     sleep 0.5
 done
