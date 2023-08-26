@@ -1,6 +1,6 @@
 #!/bin/bash
 u=$1
-key_stream="rtmp://a.rtmp.youtube.com/live2/"$you_tokens
+key_stream="rtmp://b.rtmp.youtube.com/live2/"$you_tokens
 trap printout SIGINT
 printout() {
     echo ""
