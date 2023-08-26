@@ -1,4 +1,6 @@
 #!/bin/bash
+kill -9 `pidof ffmpeg`
+
 u=$1
 key_stream="rtmp://b.rtmp.youtube.com/live2/"$you_tokens
 trap printout SIGINT
