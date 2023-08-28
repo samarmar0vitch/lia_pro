@@ -32,6 +32,7 @@ def send_telegram_message(message: str,
         print(response)
         return response
 
-def send_it():
-	print(send_telegram_message("Hello world!!! i am LIVE now On Tiktok : https://www.tiktok.com/@liaeljoni1/live", chat_id, api_key,None,None,None))
+def send_it(lol):
+	url_tolive=""
+	print(send_telegram_message("Hello world!!! i am LIVE now On Tiktok : https://www.tiktok.com/@"+lol+"/live", chat_id, api_key,None,None,None))
 	
