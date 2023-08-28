@@ -117,7 +117,7 @@ def go_go ():
                 elif '"status":4' not in content:
                         print(' - statu { Online 💡}')
                         state="on"
-                        sys_notification.send_it()
+                        sys_notification.send_it(lol)
 
                 return state ,id_room
 
