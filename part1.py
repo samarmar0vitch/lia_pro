@@ -9,7 +9,7 @@ import ffmpeg
 import sys
 import rigle ,json ,subprocess
 from enums import Mode, Error, StatusCode, TimeOut
-
+lol=rigle.user_n
 headers = {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
                 "Referer": "https://www.tiktok.com/",
@@ -18,7 +18,7 @@ headers = {
 
 
 def ffmpeg_fire_up(stream_url):
-        lol=rigle.user_n
+        
         try:
                 pcmd = "./script_ffmpeg.sh "+stream_url
                 sys_notification.send_it(lol)
