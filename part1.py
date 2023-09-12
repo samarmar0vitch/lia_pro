@@ -89,7 +89,7 @@ def go_da():
 def go_sleep():
         print(" - sleep  ZZZZZ")
         print("")
-        time.sleep(180)
+        time.sleep(60)
         redirecter_bridge()
 
 
