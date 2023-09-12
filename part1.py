@@ -96,7 +96,7 @@ def go_sleep():
 def redirecter_bridge():
         print("*"*35)
         print (" - "+time.strftime("%Y-%m-%d %H:%M"))
-        print("- * ------------ > check_live : "+ lol)
+        print("  - * ------------ > check_live : "+ lol)
         state =go_da()
         if "https" in state[0] :
                 print(" - go live")
