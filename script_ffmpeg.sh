@@ -14,7 +14,7 @@ do
     ((count++))
 ffmpeg -hide_banner  -re -fflags +genpts -i $u -flags +global_header -c:v copy -tag:v hvc1 -codec:a copy -hls_init_time 6.000 -hls_time 6.000 -strftime 1 -master_pl_name master.m3u8 -http_persistent 1 -f hls -segment_wrap 1 -method POST "https://a.upload.youtube.com/http_upload_hls?cid="$you_tokens"&copy=0&file=master.m3u8"
 
-    sleep 0.5
+    sleep 0.2
 done
 ##ffmpeg -probesize 100M -analyzeduration 20M -re -i "https://pull-f5-sg01.tiktokcdn.com/stage/stream-2131214758098501701_or4.flv" -strict -2 -c:v libx264 -pix_fmt yuv420p -c:a aac -map 0:0 -map 0:1 -ar 44100 -ab 128k -ac 2 -b:v 2567k -flags +global_header -bsf:a aac_adtstoasc -bufsize 1000k -f flv "rtmp://a.rtmp.youtube.com/live2/ms9z-mx5s-fvjg-9tmf-93ap"\n
 #ffmpeg -probesize 100M -analyzeduration 20M -re -vsync 2 -i $u \
