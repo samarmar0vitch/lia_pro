@@ -87,7 +87,7 @@ def go_da():
     return main_arry
 
 def go_sleep():
-        print(" - sleep  ZZZZZ 😴 ")
+        print(" - sleep  ZZZZZ")
         print("")
         time.sleep(180)
         redirecter_bridge()
@@ -100,11 +100,11 @@ def redirecter_bridge():
         state =go_da()
         if "https" in state[0] :
                 print(" - go live")
-                print(' - statu { Online  🤟 }')
+                print(' - statu { Online  }')
                 go_live(state[0])
         if "offline" in state[0] :
                 print(" - statu sleep ")
-                print(' - statu { Offline 🏮 }')
+                print(' - statu { Offline  }')
                 go_sleep()
 
 ####################################################################
