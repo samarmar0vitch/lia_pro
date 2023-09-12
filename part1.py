@@ -8,7 +8,7 @@ lol=rigle.user_n
 
 # TikTokApi(logging_level=logging.INFO)
 # Instantiate the client with the user's username
-client: TikTokLiveClient = TikTokLiveClient(unique_id="@babajackson84")
+client: TikTokLiveClient = TikTokLiveClient(unique_id="@"+lol)
 # client: TikTokLiveClient = TikTokLiveClient(unique_id="@miraharmo12")
 
 main_arry=[]
@@ -86,15 +86,6 @@ def go_da():
         main_arry.append("offline")
     return main_arry
 
-
-
-                # if '"status":4' in content:
-                #         print(' - statu { Offline ⛔ }')
-                #         state="off"
-                # elif '"status":4' not in content:
-                #         print(' - statu { Online 💡}')
-                #         state="on"
-
 def go_sleep():
         print(" - sleep  ZZZZZ 📴 ")
         print("")
@@ -105,6 +96,7 @@ def go_sleep():
 def redirecter_bridge():
         print("*"*35)
         print (" - "+time.strftime("%Y-%m-%d %H:%M"))
+        print("- * ------------ > check_live : "+ lol)
         state =go_da()
         if "https" in state[0] :
                 print(" - go live")
