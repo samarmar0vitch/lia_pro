@@ -87,7 +87,7 @@ def go_da():
     return main_arry
 
 def go_sleep():
-        print(" - sleep  ZZZZZ 📴 ")
+        print(" - sleep  ZZZZZ 😴 ")
         print("")
         time.sleep(60)
         redirecter_bridge()
