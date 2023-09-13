@@ -33,6 +33,7 @@ async def on_connect(_: ConnectEvent):
         url_param: str = url['data']['origin']['main']['flv']
     url_param2: str = url['data']['origin']['main']['flv']
     # main_arry.append(url_param)
+    main_arry.clear()
     main_arry.append(url_param2)
     client.stop()
 
