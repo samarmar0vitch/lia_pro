@@ -104,11 +104,11 @@ def redirecter_bridge():
         print(main_arry)
         print(state)
         
-        if "https" in state[0] :
+        if "https" in main_arry[0] :
                 print(" - go live")
                 print(' - statu { Online  }')
-                go_live(state[0])
-        if "offline" in state[0] :
+                go_live(main_arry[0])
+        if "offline" in main_arry[0] :
                 print(" - statu sleep ")
                 print(' - statu { Offline  }')
                 go_sleep()
