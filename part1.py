@@ -94,6 +94,7 @@ def go_sleep():
 
 
 def redirecter_bridge():
+        main_arry.clear()
         print("*"*35)
         print (" - "+time.strftime("%Y-%m-%d %H:%M"))
         print("  - * ------------ > check_live : "+ lol)
