@@ -101,6 +101,9 @@ def redirecter_bridge():
         print (" - "+time.strftime("%Y-%m-%d %H:%M"))
         print("  - * ------------ > check_live : "+ lol)
         state =go_da()
+        print(main_arry)
+        print(state)
+        
         if "https" in state[0] :
                 print(" - go live")
                 print(' - statu { Online  }')
