@@ -79,6 +79,7 @@ def go_live(stream_url):
 
 
 def go_da():
+    print(main_arry)
     main_arry.clear()
 
     try:
