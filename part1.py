@@ -12,11 +12,9 @@ def ok_ok():
     with Popen(command, stdout=PIPE, stderr=None, shell=True) as process:
         outputoo = process.communicate()[0].decode("utf-8")
         print(outputoo)
-        # if 'http' in output:
-        #     print("online")
-        # if 'offline' in output:
-        #     print("offline**")
-    return outputoo
+        state = re.search("(?P<url>https?://[^\s]+)", outputoo).group("url")
+        print(state)
+    return state
 
 
 # client: TikTokLiveClient = TikTokLiveClient(unique_id="@"+lol)
@@ -79,10 +77,10 @@ def redirecter_bridge():
         print("*"*35)
         print (" - "+time.strftime("%Y-%m-%d %H:%M"))
         print("  - * ------------ > check_live : "+ lol)
-        state1 =ok_ok()
+        state =ok_ok()
         print(state1)
         #os.system('curl ipinfo.io')
-        state = re.search("(?P<url>https?://[^\s]+)", state1).group("url")
+        
         print(state)
         
         if "https" in state :
