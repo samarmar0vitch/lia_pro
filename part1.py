@@ -70,7 +70,7 @@ def go_live(stream_url):
 def go_sleep():
         print(" - sleep  ZZZZZ")
         print("")
-        time.sleep(60)
+        time.sleep(90)
         redirecter_bridge()
 
 
