@@ -10,7 +10,7 @@ lol=rigle.user_n
 def ok_ok():
     command = "python3 ff.py"
     with Popen(command, stdout=PIPE, stderr=None, shell=True) as process:
-        outputoo = process.communicate()[0].decode("utf-8")
+        outputoo = process.communicate()[0]
         print(outputoo)
         # if 'http' in output:
         #     print("online")
