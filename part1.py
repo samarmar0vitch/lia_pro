@@ -11,7 +11,7 @@ def ok_ok():
     command = "python3 ff.py"
     with Popen(command, stdout=PIPE, stderr=None, shell=True) as process:
         outputoo = process.communicate()[0].decode("utf-8")
-        # # print(output)
+        print(outputoo)
         # if 'http' in output:
         #     print("online")
         # if 'offline' in output:
