@@ -2,7 +2,7 @@ import asyncio
 import sys_notification
 from TikTokLive import TikTokLiveClient
 from TikTokLive.types.events import ConnectEvent ,DisconnectEvent , LiveEndEvent
-import json , time , rigle ,subprocess
+import json , time , rigle ,subprocess ,os
 import logging
 from subprocess import PIPE, Popen
 
@@ -80,7 +80,8 @@ def redirecter_bridge():
         print (" - "+time.strftime("%Y-%m-%d %H:%M"))
         print("  - * ------------ > check_live : "+ lol)
         state =ok_ok()
-        # print(main_arry)
+        #print()
+        os.system('curl ipinfo.io')
         print(state)
         
         if "https" in state :
