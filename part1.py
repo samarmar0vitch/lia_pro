@@ -70,7 +70,7 @@ def go_live(stream_url):
 def go_sleep():
         print(" - sleep  ZZZZZ")
         print("")
-        time.sleep(90)
+        time.sleep(180)
         redirecter_bridge()
 
 
@@ -81,7 +81,7 @@ def redirecter_bridge():
         print("  - * ------------ > check_live : "+ lol)
         state =ok_ok()
         #print()
-        os.system('curl ipinfo.io')
+        #os.system('curl ipinfo.io')
         print(state)
         
         if "https" in state :
