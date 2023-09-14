@@ -78,7 +78,7 @@ def redirecter_bridge():
         print (" - "+time.strftime("%Y-%m-%d %H:%M"))
         print("  - * ------------ > check_live : "+ lol)
         state =ok_ok()
-        print(state1)
+        print(state)
         #os.system('curl ipinfo.io')
         
         print(state)
