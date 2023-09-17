@@ -12,7 +12,8 @@ printout() {
 while :
 do
     ((count++))
-ffmpeg -hide_banner  -re -fflags +genpts -i $u -flags +global_header -c:v copy -tag:v hvc1 -codec:a copy -hls_init_time 6.000 -hls_time 6.000 -strftime 1 -master_pl_name master.m3u8 -http_persistent 1 -f hls -segment_wrap 1 -method POST "https://a.upload.youtube.com/http_upload_hls?cid="$you_tokens"&copy=0&file=master.m3u8"
+#ffmpeg -hide_banner  -re -fflags +genpts -i $u -flags +global_header -c:v copy -tag:v hvc1 -codec:a copy -hls_init_time 6.000 -hls_time 6.000 -strftime 1 -master_pl_name master.m3u8 -http_persistent 1 -f hls -segment_wrap 1 -method POST "https://a.upload.youtube.com/http_upload_hls?cid="$you_tokens"&copy=0&file=master.m3u8"
+ffmpeg -hide_banner  -re -fflags +genpts -i $u -vf "drawtext=fontfile=/usr/share/fonts/truetype/ttf-bitstream-vera/Vera.ttf: text='%{localtime\:%Y/%m/%d %H\\\\\:%M\\\\\:%S}': fontcolor=white@0.8: x=2: y=1008" -flags +global_header -c:v libx264 -tag:v hvc1 -c:a copy -hls_init_time 6.000 -hls_time 6.000 -strftime 1 -master_pl_name master.m3u8 -http_persistent 1 -f hls -segment_wrap 1 -method POST "https://a.upload.youtube.com/http_upload_hls?cid=c906-whkv-gpuv-dqm1-7z1u&copy=0&file=master.m3u8"
 
     sleep 0.2
 done
