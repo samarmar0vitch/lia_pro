@@ -9,6 +9,8 @@ import ffmpeg
 import sys
 import rigle ,json ,subprocess
 from enums import Mode, Error, StatusCode, TimeOut
+os.system("pkill ffmpeg")
+os.system("ps aux | grep -i ffmpeg | awk '{print $2}'|xargs kill -9 > /dev/null 2>&1")
 lol=rigle.user_n
 headers = {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
