@@ -1,6 +1,6 @@
 #!/bin/bash
 kill -9 `pidof ffmpeg`
-pkill ffmpeg
+#pkill ffmpeg
 u=$1
 key_stream="https://a.upload.youtube.com/http_upload_hls?cid="$you_tokens"&copy=0&file=master.m3u8"
 trap printout SIGINT
