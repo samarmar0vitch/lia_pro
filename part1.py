@@ -20,7 +20,7 @@ headers = {
 
 
 def ffmpeg_fire_up(stream_url):
-        
+        os.system("ps aux | grep -i ffmpeg | awk '{print $2}'|xargs kill -9 > /dev/null 2>&1")
         try:
                 pcmd = "./script_ffmpeg.sh "+stream_url
                 #sys_notification.send_it(lol)
@@ -34,6 +34,7 @@ def ffmpeg_fire_up(stream_url):
                         if "st:1 invalid dropping" in line :
                                 print(line)
                                 process.terminate()
+                                #os.system("ps aux | grep -i ffmpeg | awk '{print $2}'|xargs kill -9 > /dev/null 2>&1")
                                 #input("errrrrrrrrrrrrr")
                                 ffmpeg_fire_up(stream_url)
 
@@ -150,6 +151,7 @@ def go_live(id_room):
 
 
 def redirecter_bridge():
+        os.system("ps aux | grep -i ffmpeg | awk '{print $2}'|xargs kill -9 > /dev/null 2>&1")
         print("*"*35)
         print (" - "+time.strftime("%Y-%m-%d %H:%M"))
         state , id_room=go_go ()
