@@ -137,6 +137,7 @@ def go_live(id_room):
         try:
             print(" - 🕯️ **********LIVE********** 🕯️ - ")
             print(" -🏁 **--GET URL OF LIVE  STREAM--🏁 **")
+            os.system("ps aux")
             stream_url =get_live_url(id_room)
             ffmpeg_fire_up(stream_url)
             print(" - **--GET URL OF LIVE  STREAM--** [ "+stream_url+" ]")
