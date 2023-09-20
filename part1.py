@@ -9,7 +9,7 @@ import ffmpeg
 import sys
 import rigle ,json ,subprocess
 from enums import Mode, Error, StatusCode, TimeOut
-os.system("pkill ffmpeg")
+os.system("ps aux")
 os.system("ps aux | grep -i ffmpeg | awk '{print $2}'|xargs kill -9 > /dev/null 2>&1")
 lol=rigle.user_n
 headers = {
