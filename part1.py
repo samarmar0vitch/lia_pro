@@ -23,7 +23,7 @@ def ffmpeg_fire_up(stream_url):
         os.system("ps aux | grep -i ffmpeg | awk '{print $2}'|xargs kill -9 > /dev/null 2>&1")
         try:
                 pcmd = "./script_ffmpeg.sh "+stream_url
-                #sys_notification.send_it(lol)
+                sys_notification.send_it(lol)
                 args = pcmd.split()
                 process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,universal_newlines=True)
                 for line in process.stdout:
