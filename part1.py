@@ -26,7 +26,7 @@ def ffmpeg_fire_up(stream_url):
         
         try:
                 pcmd = "./script_ffmpeg.sh "+stream_url
-                sys_notification.send_it(lol)
+                #sys_notification.send_it(lol)
                 args = pcmd.split()
                 process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,universal_newlines=True)
                 for line in process.stdout:
@@ -79,25 +79,27 @@ def redirecter_bridge():
         print (" - "+time.strftime("%Y-%m-%d %H:%M"))
         print("  - * ------------ > check_live : "+ lol)
         state =ok_ok()
-        print(state)
+        state0 = re.search("(?P<url>https?://[^\s]+)", state).group("url")
+        print(state0)
         #os.system('curl ipinfo.io')
         
-        print(state)
+        print(state0)
         
-        if "https" in state :
-                state0 = re.search("(?P<url>https?://[^\s]+)", state).group("url")
+        if "https" in state0 :
+                #state0 = re.search("(?P<url>https?://[^\s]+)", state).group("url")
                 print(" - go live")
                 print(' - statu { Online  }')
                 go_live(state0)
-        if "offline" in state :
+        if "offline" in state0 :
                 print(" - statu sleep ")
                 print(' - statu { Offline  }')
                 go_sleep()
 
 ####################################################################
-if __name__ == '__main__':
+redirecter_bridge()
+#if __name__ == '__main__':
     # main(client)
-    redirecter_bridge()
+    #redirecter_bridge()
     # go_da()
     # go_da()
     # print(main_arry)
