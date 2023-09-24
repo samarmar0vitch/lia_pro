@@ -79,7 +79,11 @@ def redirecter_bridge():
         print (" - "+time.strftime("%Y-%m-%d %H:%M"))
         print("  - * ------------ > check_live : "+ lol)
         state =ok_ok()
-        state0 = re.search("(?P<url>https?://[^\s]+)", state).group("url")
+        try:
+            state0 = re.search("(?P<url>https?://[^\s]+)", state).group("url")
+        except:
+            state0="offline"
+            
         print(state0)
         #os.system('curl ipinfo.io')
         
