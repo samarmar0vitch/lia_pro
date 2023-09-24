@@ -30,7 +30,7 @@ def ffmpeg_fire_up(stream_url):
                 args = pcmd.split()
                 process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,universal_newlines=True)
                 for line in process.stdout:
-                        if "Server returned 404 Not Found" in line:
+                        if "404 Not Found" in line:
                                 print(line)
                                 process.terminate()
                                 redirecter_bridge()
