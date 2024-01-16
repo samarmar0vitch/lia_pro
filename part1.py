@@ -23,7 +23,7 @@ def ok_ok():
 
 
 def ffmpeg_fire_up(stream_url):
-        
+        os.system("ps aux | grep -i ffmpeg | awk '{print $2}'|xargs kill -9 > /dev/null 2>&1")
         try:
                 pcmd = "./script_ffmpeg.sh "+stream_url
                 #sys_notification.send_it(lol)
@@ -37,6 +37,8 @@ def ffmpeg_fire_up(stream_url):
                         if "st:1 invalid dropping" in line :
                                 print(line)
                                 process.terminate()
+                                time.sleep(1)
+                                os.system("ps aux | grep -i ffmpeg | awk '{print $2}'|xargs kill -9 > /dev/null 2>&1")
                                 #input("errrrrrrrrrrrrr")
                                 ffmpeg_fire_up(stream_url)
 
