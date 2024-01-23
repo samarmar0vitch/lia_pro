@@ -28,7 +28,7 @@ def ffmpeg_fire_up(stream_url):
                 pcmd = "./script_ffmpeg.sh "+stream_url
                 #sys_notification.send_it(lol)
                 args = pcmd.split()
-                process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,universal_newlines=True)
+                process = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=False ,universal_newlines=True ,preexec_fn=os.setsid)
                 for line in process.stdout:
                         if "404 Not Found" in line:
                                 print(line)
@@ -36,10 +36,13 @@ def ffmpeg_fire_up(stream_url):
                                 redirecter_bridge()
                         if "st:1 invalid dropping" in line :
                                 print(line)
-                                process.terminate()
+                                print("errrror")
                                 time.sleep(1)
                                 os.system("ps aux | grep -i ffmpeg | awk '{print $2}'|xargs kill -9 > /dev/null 2>&1")
-                                #input("errrrrrrrrrrrrr")
+                                process.kill()
+                                os.killpg(os.getpgid(self.proc.pid), signal.SIGHUP)
+                                os.killpg(os.getpgid(self.proc.pid), signal.SIGTERM)
+                                print("errrrrrrrrrrrrr")
                                 ffmpeg_fire_up(stream_url)
 
         except Exception as e:
@@ -98,7 +101,7 @@ def redirecter_bridge():
                 go_live(state0)
         if "offline" in state0 :
                 print(" - statu sleep ")
-                print(' - statu { Offline  }')
+                print(' - statu { Offline XD }')
                 go_sleep()
 
 ####################################################################
