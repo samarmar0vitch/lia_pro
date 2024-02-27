@@ -44,7 +44,8 @@ def ffmpeg_fire_up(stream_url):
                                 #os.killpg(os.getpgid(self.proc.pid), signal.SIGHUP)
                                 #os.killpg(os.getpgid(self.proc.pid), signal.SIGTERM)
                                 print("errrrrrrrrrrrrr")
-                                ffmpeg_fire_up(stream_url)
+                                os.system("supervisorctl restart start-sync-stream")
+                                #ffmpeg_fire_up(stream_url)
 
         except Exception as e:
                 print("ffmpeg_fire_up issue")
