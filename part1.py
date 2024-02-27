@@ -1,7 +1,7 @@
 import asyncio
 import sys_notification
 from TikTokLive import TikTokLiveClient
-from TikTokLive.types.events import ConnectEvent ,DisconnectEvent , LiveEndEvent
+#from TikTokLive.types.events import ConnectEvent ,DisconnectEvent , LiveEndEvent
 import json , time , rigle ,subprocess ,os ,re
 import logging
 from subprocess import PIPE, Popen
