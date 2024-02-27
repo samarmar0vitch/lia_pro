@@ -55,3 +55,4 @@ def go_da():
 #     print(main_arry)
 go_da()
 print(main_arry[0], end='')
+print(TikTokLive.__version__)
