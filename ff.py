@@ -17,7 +17,14 @@ async def on_connect(event: ConnectEvent):
     client.logger.info("Connected!")
     url: dict = json.loads(client.room_info['stream_url']['live_core_sdk_data']['pull_data']['stream_data'])
     url_param: str = url['data']['origin']['main']['hls']
-    print(url_param)
+    print("nppppppppppppppppp")
+    if len(url_param.strip()) == 0:
+        url_param: str = url['data']['origin']['main']['flv']
+    url_param2: str = url['data']['origin']['main']['flv']
+    main_arry.clear() 
+    # main_arry.append(url_param2)
+    main_arry.append(url_param2)
+    print(url_param2)
     
     await asyncio.sleep(5)
 
