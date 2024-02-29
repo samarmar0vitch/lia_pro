@@ -15,14 +15,10 @@ client: TikTokLiveClient = TikTokLiveClient(
 @client.on(ConnectEvent)
 async def on_connect(event: ConnectEvent):
     client.logger.info("Connected!")
-
-    # Start a recording
-    client.web.fetch_video.start(
-        output_fp=f"{event.unique_id}.mp4",
-        room_info=client.room_info,
-        output_format="mp4"
-    )
-
+    url: dict = json.loads(client.room_info['stream_url']['live_core_sdk_data']['pull_data']['stream_data'])
+    url_param: str = url['data']['origin']['main']['hls']
+    print(url_param)
+    
     await asyncio.sleep(5)
 
     # Stop the client, we're done!
