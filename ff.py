@@ -24,7 +24,7 @@ main_arry=[""]
 #     # print(main_arry)
 
 
-@client.on("connect")
+@client.on("ConnectEvent")
 async def on_connect(_: ConnectEvent):
     # print("connected")
     url: dict = json.loads(client.room_info['stream_url']['live_core_sdk_data']['pull_data']['stream_data'])
