@@ -4,8 +4,10 @@ from TikTokLive.client.client import TikTokLiveClient
 from TikTokLive.client.logger import LogLevel
 from TikTokLive.events import ConnectEvent, DisconnectEvent
 
+lol=rigle.user_n
+
 client: TikTokLiveClient = TikTokLiveClient(
-    unique_id="@tv_asahi_news"
+    unique_id="@"+lol
 )
 
 
