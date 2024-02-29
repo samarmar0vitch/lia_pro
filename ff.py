@@ -28,6 +28,8 @@ async def on_connect(event: ConnectEvent):
     client.logger.info("Connected!")
     url: dict = json.loads(client.room_info['stream_url']['live_core_sdk_data']['pull_data']['stream_data'])
     url_param: str = url['data']['origin']['main']['hls']
+    print(url_param)
+    print(url)
 
     if len(url_param.strip()) == 0:
         url_param: str = url['data']['origin']['main']['flv']
