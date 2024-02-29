@@ -44,7 +44,8 @@ def go_da():
     # print(main_arry)
     main_arry.clear()
     try:
-        client.run()
+        client.logger.setLevel(LogLevel.INFO.value)
+        client.run(fetch_room_info=True)
     except:
         main_arry.append("offline")
     client.stop()
