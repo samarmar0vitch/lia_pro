@@ -1,7 +1,9 @@
 import asyncio
 #import sys_notification
 from TikTokLive import TikTokLiveClient
-from TikTokLive.events import ConnectEvent ,DisconnectEvent , LiveEndEvent
+#from TikTokLive.events import ConnectEvent ,DisconnectEvent , LiveEndEvent
+from TikTokLive.client.logger import LogLevel
+from TikTokLive.events import ConnectEvent, DisconnectEvent
 import json , time , rigle ,subprocess
 # import logging
 # lol=rigle.user_n
