@@ -35,6 +35,7 @@ async def on_connect(event: ConnectEvent):
     main_arry.clear()
     # main_arry.append(url_param2)
     main_arry.append(url_param2)
+    print(main_arry[0], end='')
 
 
     # Start a recording
