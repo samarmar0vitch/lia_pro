@@ -63,14 +63,14 @@ async def on_connect(event: ConnectEvent):
 
 
 def go_da():
-    # print(main_arry)
+    # print(main_arry) client.disconnect()
     main_arry.clear()
     try:
         client.logger.setLevel(LogLevel.INFO.value)
         client.run(fetch_room_info=True)
     except:
         main_arry.append("offline")
-    client.stop()
+    client.disconnect()
 
 # if __name__ == '__main__':
 #     # main(client)
