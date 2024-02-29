@@ -23,20 +23,27 @@ main_arry=[""]
 #     print("************")
 #     # print(main_arry)
 
+@client.on(ConnectEvent)
+async def on_connect(event: ConnectEvent):
+    client.logger.info("Connected!")
 
-@client.on("ConnectEvent")
-async def on_connect(_: ConnectEvent):
-    # print("connected")
-    url: dict = json.loads(client.room_info['stream_url']['live_core_sdk_data']['pull_data']['stream_data'])
-    url_param: str = url['data']['origin']['main']['hls']
+    # Start a recording
+    client.web.fetch_video.start(
+        output_fp=f"{event.unique_id}.mp4",
+        room_info=client.room_info,
+        output_format="mp4"
+    )
 
-    if len(url_param.strip()) == 0:
-        url_param: str = url['data']['origin']['main']['flv']
-    url_param2: str = url['data']['origin']['main']['flv']
-    main_arry.clear() 
-    # main_arry.append(url_param2)
-    main_arry.append(url_param2)
-    client.stop()
+    await asyncio.sleep(5)
+
+    # Stop the client, we're done!
+    await client.disconnect()
+
+
+
+
+
+#
     
 
 
