@@ -38,9 +38,10 @@ async def on_live_end(_: DisconnectEvent):
     """Stop the download when we disconnect"""
 
     client.logger.info("Disconnected!")
+    print("Stop the download when we disconnect")
 
-    if client.web.fetch_video.is_recording:
-        client.web.fetch_video.stop()
+    #if client.web.fetch_video.is_recording:
+    #    client.web.fetch_video.stop()
 
 
 if __name__ == '__main__':
